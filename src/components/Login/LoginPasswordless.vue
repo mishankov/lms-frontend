@@ -53,8 +53,8 @@ export default {
       return this.error ?? "Мы отправим ссылку для входа по этому адресу";
     },
     isButtonSendDisabled() {
-      const { isSubmitted, isSending, email, error } = this;
-      return !email || isSubmitted || isSending || error;
+      const { isSubmitted, isSending, email } = this;
+      return !email || isSubmitted || isSending;
     },
   },
   watch: {
