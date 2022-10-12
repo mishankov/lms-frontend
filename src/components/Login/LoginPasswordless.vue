@@ -9,6 +9,7 @@
       :is-invalid="!!error"
       :bottom-text="inputButtonText"
       has-autofocus
+      type="email"
       label="Электронная почта"
       class="login-passwordless__input"
       @input="handleInput"
