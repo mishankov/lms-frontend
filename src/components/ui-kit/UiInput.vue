@@ -1,7 +1,7 @@
 <template>
   <div :class="{ 'ui-input--invalid': isInvalid, 'ui-input--disabled': isDisabled }" class="ui-input">
     <label class="ui-input__label" :for="labelFor">{{ label }}</label>
-    <input :id="labelFor" ref="uiInput" :value="value" v-bind="nativeProps" class="ui-input__input" v-on="$listeners" />
+    <input :id="labelFor" ref="uiInput" :type="type" :value="value" v-bind="nativeProps" class="ui-input__input" v-on="$listeners" />
     <p class="ui-input__bottom-text">{{ bottomText }}</p>
   </div>
 </template>
@@ -9,6 +9,7 @@
 export default {
   name: "UiInput",
   props: {
+    type: { type: String, default: "text" },
     label: { type: String, default: "" },
     bottomText: { type: String, default: "" },
     value: { type: String, default: "" },
