@@ -47,4 +47,18 @@ describe("UiInput", () => {
 
     expect(document.activeElement).not.toBe(input.element);
   });
+
+  it("Has proper input type if set", () => {
+    const TYPE = "email";
+    const propsData = { type: "email" };
+    createComponent({ propsData });
+
+    expect(wrapper.html()).toMatch(`type="${TYPE}"`);
+  });
+
+  it("Has proper input type if not set", () => {
+    createComponent();
+
+    expect(wrapper.html()).toMatch(`type="text"`);
+  });
 });
